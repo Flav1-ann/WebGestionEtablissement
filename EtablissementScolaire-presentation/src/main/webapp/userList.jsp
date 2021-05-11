@@ -66,6 +66,7 @@
                             <th scope="col">Prénom</th>
                             <th scope="col">Nom</th>
                             <th scope="col">E-mail</th>
+                            <th scope="col">Date de naissance</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -77,6 +78,7 @@
                             <td><%= e.getPrenom()%></td>
                             <td><%= e.getNom()%></td>
                             <td><%= e.getEmail()%></td>
+                            <td><%= e.getDateNaissance().toString()  %></td>
                           </tr>
                         <%
                             }
