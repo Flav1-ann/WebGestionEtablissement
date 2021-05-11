@@ -2,7 +2,6 @@
   <%@ page import="java.util.Set" %>
     <%@ page import="eu.ensup.etablissementscolaire.Matiere" %>
       <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
           <!DOCTYPE html>
           <html lang="fr">
 
@@ -12,7 +11,6 @@
             <meta charset="UTF-8">
             <title>Appli étudiant</title>
             <link href="css/style.css" rel="stylesheet">
-            <script type="text/javascript" src="css/notes.js" defer></script>
 
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
@@ -82,7 +80,7 @@
                         <div class="form-group col-6">
                           <label for="courseselect">Choisir une matière:</label>
 
-                          <select name="courses" id="courseselect">
+                          <select name="courseselect" id="courseselect">
                             <option value="" selected disabled>-- Matière --</option>
                             <% for(Matiere c : (Set<Matiere>) session.getAttribute("listCourse")){ %>
                               <option value="<%= c.getId() %>">

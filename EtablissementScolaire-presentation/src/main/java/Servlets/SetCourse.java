@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Set;
 
 @WebServlet(name = "setCourse", value = "/setCourse")
@@ -53,8 +52,8 @@ public class SetCourse extends HttpServlet {
             if (request.getParameter("error") != null){
                 request.setAttribute("error", "");
             }
-            if (request.getParameter("button") != null && !request.getParameter("button").isEmpty() && request.getParameter("button").split(" ").length >= 2){
-                coursService.inscription(coursService.get(Integer.parseInt(request.getParameter("button").split(" ")[0]) ),etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])));
+            if (request.getParameter("studentselect") != null && !request.getParameter("studentselect").isEmpty() && request.getParameter("courses") != null && !request.getParameter("courses").isEmpty()){
+                coursService.inscription(coursService.get(Integer.parseInt(request.getParameter("courses")) ),etudiantService.get(Integer.parseInt(request.getParameter("studentselect"))));
                 request.setAttribute("error", "Attribution du cour à réussi");
 
             }

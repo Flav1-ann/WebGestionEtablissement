@@ -57,9 +57,9 @@ public class AddNoteController extends HttpServlet {
 
             userSession.setAttribute("listEtudiant",List);
 
-            if (request.getParameter("button")!= null ){
-                NoteEleve noteEleve = new NoteEleve(1, Integer.parseInt(request.getParameter("button").split(" ")[2]));
-                noteEleveService.addNoteEleve(noteEleve,etudiantService.get(Integer.parseInt(request.getParameter("button").split(" ")[1])),matiereService.get(Integer.parseInt(request.getParameter("button").split(" ")[0])));
+            if (request.getParameter("courseselect")!= null && request.getParameter("studentselect")!= null){
+                NoteEleve noteEleve = new NoteEleve(1, Integer.parseInt(request.getParameter("noteselect")));
+                noteEleveService.addNoteEleve(noteEleve,etudiantService.get(Integer.parseInt(request.getParameter("studentselect"))),matiereService.get(Integer.parseInt(request.getParameter("courseselect"))));
             }
 
             request.getRequestDispatcher("addNoteEtudiant.jsp").forward(request,response);

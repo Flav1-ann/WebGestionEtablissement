@@ -9,9 +9,6 @@ if (document.getElementById("dropPicker") != null)
         fildForm()
     });
 
-
-
-
 function fildForm() {
     document.getElementById("form_info_text").textContent = "";
     let etu = new  Etudiant()
@@ -119,34 +116,3 @@ class Etudiant {
     }
 }
 
-
-if (document.getElementById("studentselect") != null && document.getElementById("courseselect") != null)
-{
-    let course ;
-    let etudiant;
-    document.getElementById("courseselect").addEventListener("change",() =>{
-        course = document.getElementById("courseselect").selectedOptions[0].value
-        assoCouse(course ,etudiant)
-    });
-
-    document.getElementById("studentselect").addEventListener("change",() =>{
-        etudiant = document.getElementById("studentselect").selectedOptions[0].value
-        assoCouse(course ,etudiant)
-    });
- //   assoCouse(course ,etudiant)
-}
-
-function assoCouse(course ,etudiant){
-    if (course != null && etudiant != null  )
-    {
-        console.log(course +" "+ etudiant)
-        document.getElementById("button").setAttribute("value",course +" "+ etudiant)
-        //
-        // var xhttp;
-        // xhttp = new XMLHttpRequest();
-        // xhttp.open("GET", 'setCourse', true);
-        // //xhttp.response.setAttribute("Course","ouiiiiiiiiiiii");
-        // xhttp.send(course);
-    }
-
-}

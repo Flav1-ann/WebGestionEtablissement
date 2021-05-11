@@ -67,7 +67,7 @@
                             <div class="form-group col-6">
                                 <label for="studentselect">Choisir un étudiant:</label>
 
-                                <select name="student-select" id="studentselect">
+                                <select name="studentselect" id="studentselect">
                                     <option value="" selected disabled>--Choisissez un étudiant--</option>
                                     <% for(Etudiant e : (Set<Etudiant>) session.getAttribute("listEtudiant")){ %>
                                         <option value="<%= e.getId() %>"><%= e.getNom() + " " +e.getPrenom() %></option>
