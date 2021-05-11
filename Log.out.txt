@@ -1,0 +1,5 @@
+2021-03-12 11:16:19 INFO  - l'étudiant Dazin Maxime a été créé.
+2021-03-12 11:32:22 INFO  - l'étudiant a été supprimé.
+2021-03-12 11:46:34 INFO  - l'étudiant a été supprimé.
+2021-03-12 12:40:57 INFO  - l'étudiant thomas Lacomblez a été créé.
+2021-03-12 16:11:55 INFO  - l'étudiant Lacomblez thomas a été créé.
