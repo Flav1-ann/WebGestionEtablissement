@@ -88,17 +88,17 @@
                                 label: 'Niveau des élèves',
                                 data: [<%= repartition[0]%>, <%= repartition[1]%>,  <%= repartition[2]%>,  <%= repartition[3]%>],
                                 backgroundColor: [
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
+                                    'rgb(255, 51, 51)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(  255, 51, 221  )',
+                                    'rgb( 100, 255, 51)'
     
                                 ],
                                 borderColor: [
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
+                                    'rgb(255, 51, 51)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(  255, 51, 221  )',
+                                    'rgb( 100, 255, 51)'
     
                                 ],
                                 borderWidth: 1
@@ -127,10 +127,10 @@
                             label: 'My First Dataset',
                             data: [<%= repartition[0]%>, <%= repartition[1]%>,  <%= repartition[2]%>,  <%= repartition[3]%>],
                             backgroundColor: [
-                                'rgb(255, 99, 132)',
+                                'rgb(255, 51, 51)',
                                 'rgb(54, 162, 235)',
-                                'rgb(255, 205, 86)',
-                                'rgb(255, 120, 86)'
+                                'rgb(  255, 51, 221  )',
+                                'rgb( 100, 255, 51)'
                             ],
                             hoverOffset: 4
                         }]
