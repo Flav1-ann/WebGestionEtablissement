@@ -12,8 +12,7 @@ import java.util.logging.Logger;
 
 import eu.ensup.etablissementscolaire.exceptions.CRUDException;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
-
-
+import org.apache.log4j.PropertyConfigurator;
 
 
 /**
@@ -44,12 +43,11 @@ public class BaseDao {
      * Instantiates a new Base dao.
      */
     public BaseDao() {
-        //ResourceBundle bundle = ResourceBundle.getBundle("eu.ensup.domaine.properties.config");
-        //PropertyConfigurator.configure(bundle.getString("log.pathconfig"));
-        //PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
-        this.url ="jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ; //bundle.getString("jdbc:mysql://vps-0c0ccce5.vps.ovh.net:3306/etablissement_scolaire?serverTimezone=Europe/Berlin");
-        this.login = "root";//bundle.getString("web");
-        this.password = "";//bundle.getString("Ensup2020*");
+        ResourceBundle bundle = ResourceBundle.getBundle("db");
+      //  PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
+        this.url =bundle.getString("db.url");//"jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ;
+        this.login = bundle.getString("db.username");//"root";//bundle.getString("web");
+        this.password =bundle.getString("db.password");//"";/
     }
 
     /**
