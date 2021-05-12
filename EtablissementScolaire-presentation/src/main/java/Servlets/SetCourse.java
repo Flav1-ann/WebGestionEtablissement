@@ -41,8 +41,7 @@ public class SetCourse extends HttpServlet {
 
             HttpSession userSession = request.getSession();
 
-
-                listeCours = coursService.getAll();
+            listeCours = coursService.getAll();
 
             userSession.setAttribute("listCourse",listeCours);
             request.setAttribute("error", "");

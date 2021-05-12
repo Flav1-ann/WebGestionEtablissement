@@ -48,10 +48,10 @@ public class AddEtudiantController extends HttpServlet {
         }
 
         if (ret == 0) {
-            userSession.setAttribute("info", "L'étudiant à été crée");
+            request.setAttribute("info", "L'étudiant à été crée");
             request.getRequestDispatcher("createUser.jsp").forward(request, response);
         } else if (ret == -1) {
-            userSession.setAttribute("info", "Erreur lors de la creation de l'étudiant");
+            request.setAttribute("info", "Erreur lors de la creation de l'étudiant");
             request.getRequestDispatcher("createUser.jsp").forward(request, response);
         } else if (ret == -2){
             request.setAttribute("info", "Veuillez remplir tous les champs");
