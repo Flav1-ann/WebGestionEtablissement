@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 11 mai 2021 à 16:10
+-- Généré le : mer. 12 mai 2021 à 10:04
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 7.4.13
 
@@ -651,10 +651,14 @@ CREATE TABLE `etudiant` (
 --
 
 INSERT INTO `etudiant` (`id_etudiant`, `date_naissance`) VALUES
-(10, NULL),
-(11, NULL),
-(12, NULL),
-(14, NULL);
+(10, '2021-05-11'),
+(11, '2021-05-12'),
+(12, '2021-05-12'),
+(14, '2021-05-17'),
+(16, '2021-05-06'),
+(17, '2021-05-13'),
+(18, '2021-05-19'),
+(19, '2021-05-20');
 
 -- --------------------------------------------------------
 
@@ -708,13 +712,12 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id_note`, `note`, `coeif`, `id_matiere`, `id_etudiant`) VALUES
-(1, 14, 1, 1, 10),
-(2, 20, 1, 1, 11),
-(3, 2, 1, 1, 12),
-(4, 10, 1, 1, 10),
-(5, 20, 1, 1, 11),
-(6, 0, 1, 3, 10),
-(7, 0, 1, 5, 10);
+(10, 20, 1, 5, 10),
+(11, 10, 1, 4, 12),
+(12, 0, 1, 4, 11),
+(13, 14, 1, 2, 14),
+(14, 14, 1, 2, 16),
+(15, 10, 1, 2, 10);
 
 -- --------------------------------------------------------
 
@@ -737,10 +740,14 @@ CREATE TABLE `personne` (
 INSERT INTO `personne` (`id_personne`, `nom`, `email`, `adresse`, `telephone`) VALUES
 (7, 'directeurN', 'directeur@gmail.com', '14 rue des directeurs', '0161380575'),
 (9, 'responsableN', 'responsable.etude@gmail.com', '1 bis Avenue du 8 Mai 1945, 78280 Guyancourt', '0161380575'),
-(10, 'Annaix aANN', 'flavien.annaix@gmail.com', 'azezaeerza', '0521455'),
+(10, 'Flavien', 'flavien.annaix@gmail.com', 'azezaeerza', '0521455'),
 (11, 'test', 'test', NULL, 'test'),
 (12, 'retzezrt', 'zetrterz', NULL, 'zterztre'),
-(14, 'qsdf', 'Fraximonstro@gmail.com', 'qdsf', '055');
+(14, 'qsdf', 'Fraximonstro@gmail.com', 'qdsf', '055'),
+(16, 'tt', 'tt@gmail.com', 'tt', 'tt'),
+(17, 'dupont', 'cc@gmail.com', '24 bur rue des champs', '0225854785'),
+(18, 'fsd', 'qfsdqfsd@gmail.com', 'qdfs', 'dqfs'),
+(19, 'zeaz', '123@gmail.com', 'ezaeaz', 'aze');
 
 -- --------------------------------------------------------
 
@@ -763,10 +770,14 @@ CREATE TABLE `personne_phys` (
 INSERT INTO `personne_phys` (`id_phys`, `prenom`, `mdp`, `salt`, `id_role`) VALUES
 (7, 'directeurN', 'nboOEaF6O4n7JA5Jbp8yxuCbDlM6Px+MRCGre6z2zsQ=', '8OpvtT/aDj5+j2bXrqdUTjvvQ3I=', 1),
 (9, 'responsableP', 'UlkmPJqdUH+bm5fb/1G17Crk6QjzpsAJG/WBAUl5Fi0=', 'dRAfq70K4Rl3iPHSeJi3JKUTOKU=', 4),
-(10, 'Flavien', '', '', 2),
+(10, 'Annaix', '', '', 2),
 (11, 'test', '3gXn+IR5orvj7usZTWk9NOF83klrK4b+yF1af1DoWCA=', '7POsZFdk4cIspcOzOmeTlP7UUcs=', 2),
 (12, 'zetrtezr', '+AgJ0+PymDowdmhaSx7/DOW2ebg0jX1Zv/N+PuqOaEc=', '5OD+NdLuN6GUUB2EnbSz3eURJ5E=', 2),
-(14, 'qdfs', 'st7VMdDPWdF6dkhFtjPl9Vwou6JySnyKxmCBbRoYEPA=', '1n47Wpe/i/xoGXhM6kHZF8omOew=', 2);
+(14, 'qdfs', 'st7VMdDPWdF6dkhFtjPl9Vwou6JySnyKxmCBbRoYEPA=', '1n47Wpe/i/xoGXhM6kHZF8omOew=', 2),
+(16, 'tt', 'NfIPjORcuh+cJWaSo/SVbzL/lIS7ggH1e8ynYPRQZQQ=', 'XBJs6sWLsjhlVYRlaLJXI/7DLx4=', 2),
+(17, 'jean', 'ni4rt589l7kXYuGGr2nUKoSw2Pejve3f94cYSjD09rE=', 'PlTPyQ71JxNpA5ZRTVQ4HHYrI2s=', 2),
+(18, 'qfsd', 'TwGn73/PU8VIzh1UJNH6tVPtBN+UeJUoAsU76RazmUY=', 'wEJ4KjeEHXYxHoUe0ZI0D3J3axo=', 2),
+(19, 'ezaeaz', 'ZMRB301GxHpxLIZ3RmP+e9q9SBkQkQLPIPJYGTUDw1s=', '0KrFEk3ntYanJkudxNQT7poSXlM=', 2);
 
 -- --------------------------------------------------------
 
@@ -822,7 +833,8 @@ CREATE TABLE `suivre` (
 --
 
 INSERT INTO `suivre` (`id_etudiant`, `id_cours`) VALUES
-(10, 1);
+(10, 1),
+(16, 4);
 
 --
 -- Index pour les tables déchargées
@@ -944,7 +956,7 @@ ALTER TABLE `enseignant`
 -- AUTO_INCREMENT pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
-  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `matiere`
@@ -956,19 +968,19 @@ ALTER TABLE `matiere`
 -- AUTO_INCREMENT pour la table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `id_personne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_personne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `personne_phys`
 --
 ALTER TABLE `personne_phys`
-  MODIFY `id_phys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_phys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `res_etude`
@@ -986,7 +998,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT pour la table `suivre`
 --
 ALTER TABLE `suivre`
-  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_etudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Contraintes pour les tables déchargées
