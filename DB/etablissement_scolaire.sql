@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `etablissement_scolaire`
 --
+CREATE DATABASE etablissement_scolaire;
 
 DELIMITER $$
 --
