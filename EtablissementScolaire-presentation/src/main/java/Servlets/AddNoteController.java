@@ -47,7 +47,7 @@ public class AddNoteController extends HttpServlet {
             HttpSession userSession = request.getSession();
 
             Set<Matiere> listeCours = null;
-                listeCours = matiereService.getAll();
+            listeCours = matiereService.getAll();
 
             userSession.setAttribute("listCourse",listeCours);
 
