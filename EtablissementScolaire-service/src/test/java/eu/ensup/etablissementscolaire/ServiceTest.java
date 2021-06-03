@@ -49,7 +49,7 @@ public class ServiceTest
 
             verify(etudiantDao).get(10);
         } catch (ParseException | GetEtudiantServiceException | DaoException e) {
-            System.out.println("Une erreur est survenue");
+            System.out.println("Une erreur est survenue lors du test");
         }
     }
 
