@@ -6,11 +6,7 @@ pipeline {
 			steps {
 				bat 'cd C:/Users/33664/Desktop/Ensup/M1/Info/EtablissementScolaire/EtablissementScolaire & mvn install test'
 			}
-		 post {
-                success {
-                    junit 'C:/Users/33664/Desktop/Ensup/M1/Info/EtablissementScolaire/EtablissementScolaire/reportTests/dao/*.xml'
-                        }
-                 }
+
 
 		}
 	}
