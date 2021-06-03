@@ -1,18 +1,11 @@
 package eu.ensup.etablissementscolaire;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ResourceBundle;
-import java.util.logging.Logger;
-
 import eu.ensup.etablissementscolaire.exceptions.CRUDException;
 import eu.ensup.etablissementscolaire.exceptions.DaoException;
-import org.apache.log4j.PropertyConfigurator;
+
+import java.sql.*;
+import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 
 /**
@@ -44,10 +37,9 @@ public class BaseDao {
      */
     public BaseDao() {
         ResourceBundle bundle = ResourceBundle.getBundle("db");
-      //  PropertyConfigurator.configureAndWatch("" + bundle.getString("log.pathconfig"));
-        this.url =bundle.getString("db.url");//"jdbc:mysql://localhost:3306/etablissement_scolaire?serverTimezone=Europe/Berlin" ;
-        this.login = bundle.getString("db.username");//"root";//bundle.getString("web");
-        this.password =bundle.getString("db.password");//"";/
+        this.url =bundle.getString("db.url");
+        this.login = bundle.getString("db.username");
+        this.password =bundle.getString("db.password");
     }
 
     /**
