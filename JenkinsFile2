@@ -32,28 +32,16 @@ pipeline {
                     bat 'mvn test'
                 }
             }
-        stage('Deploy To tomcat') {
+            stage('Deploy') {
                     steps {
                         echo 'Deploying....'
                          script {
                             try {
-                            bat copy '\\EtablissementScolaire-presentation\\target\\EtablissementScolaire-presentation-1.0-SNAPSHOT.war C:\\apache-tomcat-9.0.43\\webapps'
+                                deploy adapters: [tomcat9(credentialsId: 'f6bd7c06-c906-4ef6-bf39-8c234f1716f0', url: 'http://localhost:8080/')], contextPath: '/job9', war: '**/*.war'
                                 } catch (err) {
                             }
                          }
                     }
                 }
-                stage('Tomcat Start') {
-                                    steps {
-                                        echo 'Tomcat Start....'
-                                         script {
-                                            sleep(time:5,unit:"SECONDS")
-                                            bat 'C:\\apache-tomcat-9.0.43\\bin\\startup.bat'
-                                            sleep(time:100,unit:"SECONDS")
-
-                                         }
-                                    }
-                                }
-        }
     
 }
