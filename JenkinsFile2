@@ -37,7 +37,7 @@ pipeline {
                         echo 'Deploying....'
                          script {
                             try {
-                                deploy adapters: [tomcat9(credentialsId: 'f6bd7c06-c906-4ef6-bf39-8c234f1716f0', url: 'http://localhost:8080/')], contextPath: 'C:\apache-tomcat-9.0.43\webapps', war: '**/*.war'
+                                deploy adapters: [tomcat9(credentialsId: 'f6bd7c06-c906-4ef6-bf39-8c234f1716f0', url: 'http://localhost:8080/')], contextPath: 'C:\\apache-tomcat-9.0.43\\webapps', war: '**/*.war'
                                 } catch (err) {
                             }
                          }
