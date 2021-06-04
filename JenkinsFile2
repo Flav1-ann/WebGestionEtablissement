@@ -29,7 +29,7 @@ pipeline {
         stage('Test') {
                 steps {
                     echo 'Testing..'
-                    sh("mvn test")
+                    bat 'mvn test'
                 }
             }
         stage('Deploy To tomcat') {
@@ -37,7 +37,7 @@ pipeline {
                         echo 'Deploying....'
                          script {
                             try {
-                            bat "copy \\EtablissementScolaire-presentation\\target\\EtablissementScolaire-presentation-1.0-SNAPSHOT.war C:\\apache-tomcat-9.0.43\\webapps"
+                            bat copy '\\EtablissementScolaire-presentation\\target\\EtablissementScolaire-presentation-1.0-SNAPSHOT.war C:\\apache-tomcat-9.0.43\\webapps'
                                 } catch (err) {
                             }
                          }
@@ -48,7 +48,7 @@ pipeline {
                                         echo 'Tomcat Start....'
                                          script {
                                             sleep(time:5,unit:"SECONDS")
-                                            bat"C:\\apache-tomcat-9.0.43\\bin\\startup.bat"
+                                            bat 'C:\\apache-tomcat-9.0.43\\bin\\startup.bat'
                                             sleep(time:100,unit:"SECONDS")
 
                                          }
