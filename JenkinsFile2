@@ -16,20 +16,44 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    bat 'mvn clean install test'
+                    echo 'Build..'
+                    bat 'mvn clean install'
             }
              post {
                  success {
+                     echo 'success..'
                      junit 'reportTests/**/*.xml'
                  }
              }
+        }
+        stage('Test') {
+                steps {
+                    echo 'Testing..'
+                    sh("mvn test")
+                }
             }
-            stage('Test') {
-            			steps {
-            				echo 'Testing..'
-            				sh("mvn test")
-            			}
-            		}
+        stage('Deploy To tomcat') {
+                    steps {
+                        echo 'Deploying....'
+                         script {
+                            try {
+                            bat "copy \\EtablissementScolaire-presentation\\target\\EtablissementScolaire-presentation-1.0-SNAPSHOT.war C:\\apache-tomcat-9.0.43\\webapps"
+                                } catch (err) {
+                            }
+                         }
+                    }
+                }
+                stage('Tomcat Start') {
+                                    steps {
+                                        echo 'Tomcat Start....'
+                                         script {
+                                            sleep(time:5,unit:"SECONDS")
+                                            bat"C:\\apache-tomcat-9.0.43\\bin\\startup.bat"
+                                            sleep(time:100,unit:"SECONDS")
+
+                                         }
+                                    }
+                                }
         }
     
 }
